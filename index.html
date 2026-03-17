@@ -62,28 +62,29 @@
   <p><b>Event:</b> John’s Wedding</p>
   <p><b>Date:</b> Dec 20, 2026</p>
 
-  <!-- RSVP Form with your Formspree ID -->
+  <!-- RSVP Form with Formspree -->
   <form action="https://formspree.io/f/meerryrr" method="POST" id="rsvpForm">
+    
     <label>Your Name:</label>
     <input type="text" name="name" required>
 
     <label>Will you attend?</label>
     <select name="attending" required>
-      <option value="">--Select--</option>
+      <option value="" disabled selected>--Select--</option>
       <option>Yes</option>
       <option>No</option>
     </select>
 
     <label>Meal Preference:</label>
     <select name="meal" required>
-      <option value="">--Select--</option>
+      <option value="" disabled selected>--Select--</option>
       <option>Veg</option>
       <option>Non-Veg</option>
     </select>
 
     <label>Bringing a Guest?</label>
     <select name="guest" required>
-      <option value="">--Select--</option>
+      <option value="" disabled selected>--Select--</option>
       <option>No</option>
       <option>Yes</option>
     </select>
@@ -103,7 +104,7 @@
     form.addEventListener('submit', function(e) {
       // Show thank you message immediately
       thanks.style.display = 'block';
-      // Reset form fields
+      // Clear form fields
       form.reset();
     });
   </script>
