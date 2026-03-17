@@ -6,24 +6,24 @@
   <title>Welcome</title>
 
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
-      height: 100vh;
-      overflow: hidden;
     }
 
     .cover {
-      background-image: url('cover.jpg');
-      background-size: cover;
-      background-position: center;
+      background-image: url('./cover.jpg');
+      background-size: cover;          /* fills screen */
+      background-position: center;     /* centers image */
+      background-repeat: no-repeat;
       height: 100vh;
       width: 100%;
       position: relative;
     }
 
-    .btn-container {
+    .overlay {
       position: absolute;
       bottom: 40px;
       width: 100%;
@@ -33,16 +33,24 @@
     .btn {
       background-color: rgba(212, 68, 68, 0.9);
       color: white;
-      padding: 15px 30px;
+      padding: 14px 28px;
       font-size: 18px;
       border: none;
       border-radius: 30px;
-      cursor: pointer;
       text-decoration: none;
+      display: inline-block;
     }
 
     .btn:hover {
       background-color: rgba(180, 50, 50, 0.9);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .btn {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
     }
   </style>
 </head>
@@ -50,7 +58,7 @@
 <body>
 
   <div class="cover">
-    <div class="btn-container">
+    <div class="overlay">
       <a href="form.html" class="btn">RSVP Now</a>
     </div>
   </div>
