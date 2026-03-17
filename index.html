@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
-
   <style>
+    /* Reset and basic styling */
     body, html {
       margin: 0;
       padding: 0;
@@ -13,6 +13,7 @@
       font-family: Arial, sans-serif;
     }
 
+    /* Container fills the viewport */
     .container {
       position: relative;
       height: 100vh;
@@ -20,40 +21,43 @@
       overflow: hidden;
     }
 
+    /* Background image styling */
     .cover-img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* 👈 shows FULL image (no crop) */
+      object-fit: contain; /* shows full image without cropping */
       background-color: black; /* fills empty space nicely */
     }
 
+    /* Overlay for top-center button */
     .overlay {
       position: absolute;
-      bottom: 40px;
+      top: 0;
       width: 100%;
-      text-align: center;
+      display: flex;
+      justify-content: center; /* horizontal center */
+      padding-top: 20px; /* distance from top */
+      pointer-events: none; /* let clicks go through except button */
     }
 
+    /* Button styling */
     .btn {
-  background-color: rgba(212, 68, 68, 0.9);
-  color: white;
-  padding: 14px 28px;
-  font-size: 18px;
-  border-radius: 30px;
-  text-decoration: none;
-  display: inline-block;
-
-  /* Centering at top */
-  position: absolute;      /* position relative to nearest positioned parent or page */
-  top: 20px;               /* distance from top */
-  left: 50%;               /* horizontal center */
-  transform: translateX(-50%);  /* adjust for element width to truly center */
-}
+      background-color: rgba(212, 68, 68, 0.9);
+      color: white;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      pointer-events: auto; /* make button clickable */
+      transition: background-color 0.3s ease;
+    }
 
     .btn:hover {
       background-color: rgba(180, 50, 50, 0.9);
     }
 
+    /* Responsive adjustments for smaller screens */
     @media (max-width: 600px) {
       .btn {
         font-size: 16px;
@@ -62,14 +66,13 @@
     }
   </style>
 </head>
-
 <body>
 
   <div class="container">
-    <!-- IMAGE -->
+    <!-- Background Image -->
     <img src="Sangeeth.jpg" alt="Invitation" class="cover-img">
 
-    <!-- BUTTON -->
+    <!-- Top-Center Button -->
     <div class="overlay">
       <a href="form.html" class="btn">RSVP Now</a>
     </div>
