@@ -1,6 +1,36 @@
-<form name="rsvp" method="POST" action="https://formspree.io/f/meerryrr">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP for Your Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #333;
+    }
+    h1 { text-align: center; color: #d44; }
+    form { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select, textarea, button { width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; }
+    button { margin-top: 20px; background-color: #d44; color: #fff; font-weight: bold; border: none; cursor: pointer; }
+    button:hover { background-color: #b33; }
+    #thanksMessage { text-align: center; color: green; font-weight: bold; margin-top: 20px; display: none; }
+  </style>
+</head>
+<body>
+
+<h1>🎉 You're Invited!</h1>
+<p><b>Event:</b> John’s Wedding</p>
+<p><b>Date:</b> Dec 20, 2026</p>
+
+<form id="rsvpForm" method="POST" action="https://formspree.io/f/meerryrr">
   <!-- Hidden input required by Formspree -->
-  <input type="hidden" name="form-name" value="rsvp">
+  <input type="hidden" name="_subject" value="RSVP Submission">
 
   <label>Your Name:</label>
   <input type="text" name="name" required>
@@ -31,3 +61,19 @@
 
   <button type="submit">Submit RSVP</button>
 </form>
+
+<p id="thanksMessage">Thank you for your response! 🎉</p>
+
+<script>
+  const form = document.getElementById('rsvpForm');
+  const thanks = document.getElementById('thanksMessage');
+
+  form.addEventListener('submit', function(e) {
+    // Show thank you message immediately
+    thanks.style.display = 'block';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
