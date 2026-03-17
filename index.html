@@ -35,14 +35,20 @@
     }
 
     .btn {
-      background-color: rgba(212, 68, 68, 0.9);
-      color: white;
-      padding: 14px 28px;
-      font-size: 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      display: inline-block;
-    }
+  background-color: rgba(212, 68, 68, 0.9);
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+
+  /* Centering at top */
+  position: absolute;      /* position relative to nearest positioned parent or page */
+  top: 20px;               /* distance from top */
+  left: 50%;               /* horizontal center */
+  transform: translateX(-50%);  /* adjust for element width to truly center */
+}
 
     .btn:hover {
       background-color: rgba(180, 50, 50, 0.9);
