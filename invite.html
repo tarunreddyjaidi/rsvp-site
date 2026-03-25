@@ -12,31 +12,33 @@
       height: 100%;
       width: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden;
+      background-color: black; /* fills empty space */
     }
 
     .container {
       position: relative;
-      height: 100vh;
       width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* top-align for button */
+      overflow: hidden;
     }
 
     .bg-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* fills the screen completely */
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* full image visible */
+      display: block;
       z-index: 1;
     }
 
     .overlay {
       position: absolute;
-      top: 20px; /* button at the top */
+      top: 20px; /* button at top */
       width: 100%;
       text-align: center;
-      z-index: 2; /* above the image */
+      z-index: 2;
     }
 
     .btn {
@@ -66,7 +68,7 @@
 <body>
 
 <div class="container">
-  <!-- FULL SCREEN IMAGE -->
+  <!-- FULL IMAGE VISIBLE -->
   <img src="Sangeeth.jpg" class="bg-img" alt="Invitation">
 
   <!-- BUTTON AT TOP -->
