@@ -8,43 +8,71 @@
 <style>
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #111, #333);
-    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
   }
 
-  .phone {
+  /* Background image */
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('cover.jpeg') no-repeat center/cover;
+    filter: blur(8px) brightness(0.6);
+    z-index: -1;
+  }
+
+  .screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
     text-align: center;
+    padding: 60px 20px;
+  }
+
+  .top {
+    margin-top: 40px;
   }
 
   .caller {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 500;
   }
 
   .subtext {
+    font-size: 16px;
     color: #ccc;
+    margin-top: 10px;
+  }
+
+  /* Slider */
+  .slider-container {
+    width: 280px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
     margin-bottom: 40px;
   }
 
-  .slider-container {
-    width: 250px;
-    height: 60px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 40px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
+  .slider-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    color: #eee;
+    font-size: 16px;
   }
 
   .slider {
     height: 60px;
     width: 60px;
-    background: #4CAF50;
+    background: #4cd964;
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -52,6 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 24px;
     cursor: grab;
     transition: 0.2s;
   }
@@ -60,25 +89,27 @@
     cursor: grabbing;
   }
 
-  .text {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    line-height: 60px;
-    color: #aaa;
+  /* Mobile fit */
+  @media (max-width: 600px) {
+    .caller {
+      font-size: 26px;
+    }
   }
-
 </style>
 </head>
 
 <body>
 
-<div class="phone">
-  <div class="caller">📞 Nishi Vamshi</div>
-  <div class="subtext">Incoming Call...</div>
+<div class="background"></div>
+
+<div class="screen">
+  <div class="top">
+    <div class="caller">💍 Nishi ❤️ Vamshi</div>
+    <div class="subtext">Incoming Call...</div>
+  </div>
 
   <div class="slider-container">
-    <div class="text">Slide to Answer →</div>
+    <div class="slider-text">Slide to Answer →</div>
     <div class="slider" id="slider">📞</div>
   </div>
 </div>
@@ -103,7 +134,6 @@
 
     slider.style.left = x + "px";
 
-    // If reached end → redirect
     if (x >= rect.width - 65) {
       window.location.href = "form.html";
     }
