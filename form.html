@@ -1,134 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Incoming Call</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANGEETH PARTY</title>
 
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #111, #333);
-    color: white;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #333;
+    }
 
-  .phone {
-    text-align: center;
-  }
+    h1 {
+      text-align: center;
+      color: #d44;
+    }
 
-  .caller {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-  .subtext {
-    color: #ccc;
-    margin-bottom: 40px;
-  }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-  .slider-container {
-    width: 250px;
-    height: 60px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 40px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-  }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-  .slider {
-    height: 60px;
-    width: 60px;
-    background: #4CAF50;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: grab;
-    transition: 0.2s;
-  }
+    button {
+      margin-top: 20px;
+      background-color: #d44;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
 
-  .slider:active {
-    cursor: grabbing;
-  }
-
-  .text {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    line-height: 60px;
-    color: #aaa;
-  }
-
-</style>
+    button:hover {
+      background-color: #b33;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="phone">
-  <div class="caller">📞 Nishi Vamshi</div>
-  <div class="subtext">Incoming Call...</div>
+  <h1>🎉 You're Invited!</h1>
+  <p><b>Event:</b>NISHI-VAMSHI SANGEETH</p>
+  <p><b>Date:</b> MAY 05, 2026</p>
 
-  <div class="slider-container">
-    <div class="text">Slide to Answer →</div>
-    <div class="slider" id="slider">📞</div>
-  </div>
-</div>
+  <!-- FORM -->
+  <form method="POST" action="https://formspree.io/f/meerryrr">
 
-<script>
-  const slider = document.getElementById("slider");
-  const container = document.querySelector(".slider-container");
+    <!-- Hidden fields for Formspree -->
+    <input type="hidden" name="_subject" value="RSVP Submission">
+    <input type="hidden" name="_next" value="https://tarunreddyjaidi.github.io/rsvp-site/thanks.html">
 
-  let isDragging = false;
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
 
-  slider.addEventListener("mousedown", () => isDragging = true);
-  document.addEventListener("mouseup", () => isDragging = false);
+    <label>Will you attend?</label>
+    <select name="attending" required>
+      <option value="" disabled selected>--Select--</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
-  document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
+    <label>Meal Preference:</label>
+    <select name="meal" required>
+      <option value="" disabled selected>--Select--</option>
+      <option>Veg</option>
+      <option>Non-Veg</option>
+    </select>
 
-    let rect = container.getBoundingClientRect();
-    let x = e.clientX - rect.left - 30;
+    <label>Bringing a Guest?</label>
+    <select name="guest" required>
+      <option value="" disabled selected>--Select--</option>
+      <option>No</option>
+      <option>Yes</option>
+    </select>
 
-    if (x < 0) x = 0;
-    if (x > rect.width - 60) x = rect.width - 60;
+    <label>Any message or note?</label>
+    <textarea name="note" rows="3" placeholder="Write something..."></textarea>
 
-    slider.style.left = x + "px";
+    <button type="submit">Submit RSVP</button>
 
-    // If reached end → redirect
-    if (x >= rect.width - 65) {
-      window.location.href = "form.html";
-    }
-  });
-
-  // Mobile support
-  slider.addEventListener("touchstart", () => isDragging = true);
-  document.addEventListener("touchend", () => isDragging = false);
-
-  document.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-
-    let rect = container.getBoundingClientRect();
-    let x = e.touches[0].clientX - rect.left - 30;
-
-    if (x < 0) x = 0;
-    if (x > rect.width - 60) x = rect.width - 60;
-
-    slider.style.left = x + "px";
-
-    if (x >= rect.width - 65) {
-      window.location.href = "form.html";
-    }
-  });
-</script>
+  </form>
 
 </body>
 </html>
