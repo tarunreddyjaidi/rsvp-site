@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kallem Nuthan & Musku Rajitha RSVP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="opening-screen" id="openingScreen">
+    <div class="opening-card">
+      <p class="telugu-title">శ్రీ రస్తు</p>
+      <h1>Kallem Nuthan</h1>
+      <span>&</span>
+      <h1>Musku Rajitha</h1>
+      <p class="opening-text">Wedding Invitation</p>
+      <button onclick="openInvitation()">Open Invitation</button>
+    </div>
+  </section>
+
+  <main id="mainContent" class="hidden">
+
+    <button class="music-btn" id="musicBtn">🎵 Play Music</button>
+
+    <audio id="bgMusic" loop>
+      <source src="music/wedding-music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <section class="hero">
+      <img src="images/invitation-poster.png" alt="Wedding Invitation Poster" class="poster-img" />
+
+      <div class="hero-buttons">
+        <button class="main-btn" onclick="scrollToRSVP()">RSVP Now</button>
+        <button class="outline-btn" onclick="shareInvitation()">Share Invitation</button>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <h2>Wedding Details</h2>
+      <p class="telugu-line">మీ రాక మా ఆనందం</p>
+
+      <div class="details-grid">
+        <div class="detail-card">
+          <h3>📅 Date</h3>
+          <p>07/05/2026</p>
+          <span>Sunday</span>
+        </div>
+
+        <div class="detail-card">
+          <h3>⏰ Muhurtham</h3>
+          <p>9:51 AM</p>
+          <span>Wedding Ceremony</span>
+        </div>
+
+        <div class="detail-card">
+          <h3>📍 Venue</h3>
+          <p>4381 US-377</p>
+          <span>Aubrey, TX 76227</span>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a
+          class="main-btn"
+          href="https://www.google.com/maps/search/?api=1&query=4381+US-377+Aubrey+TX+76227"
+          target="_blank"
+        >
+          Open Maps
+        </a>
+
+        <a
+          class="outline-btn"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Kallem+Nuthan+and+Musku+Rajitha+Wedding&dates=20260705T145100Z/20260705T175100Z&details=Wedding+Muhurtham+at+9:51+AM&location=4381+US-377,+Aubrey,+TX+76227"
+          target="_blank"
+        >
+          Add to Calendar
+        </a>
+      </div>
+    </section>
+
+    <section class="rsvp-section" id="rsvpForm">
+      <div class="form-card">
+        <p class="telugu-title small">శుభాకాంక్షలు</p>
+        <h2>RSVP</h2>
+        <p>Please confirm your presence</p>
+
+        <form action="https://formspree.io/f/xeenbkzr" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+
+          <select name="attendance" required>
+            <option value="">Will you attend?</option>
+            <option value="Yes">Yes, I will attend</option>
+            <option value="No">Sorry, I can't attend</option>
+            <option value="Maybe">Maybe</option>
+          </select>
+
+                    <select name="Meal" required>
+            <option value="">Meal Preferences?</option>
+            <option value="Non-Veg">Non - Veg</option>
+            <option value="Veggie">Veggie</option>
+          </select>
+
+          <input type="number" name="guests" placeholder="Number of Guests" min="1" />
+
+          <textarea name="message" placeholder="Your blessings / message"></textarea>
+
+          <button type="submit">Submit RSVP</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>With love,</p>
+      <h3>Kallem Nuthan & Musku Rajitha</h3>
+      <p class="telugu-line">మీ ఆశీర్వాదాలు మా జీవితానికి వెలుగు</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
