@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANGEETH PARTY</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d44;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #d44;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b33;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎉 You're Invited!</h1>
+  <p><b>Event:</b> NISHI-VAMSHI SANGEETH</p>
+  <p><b>Date:</b> MAY 05, 2026</p>
+  <p><b>Address:</b> 4381 US-377, Aubrey, TX, 76227</p>
+
+  <!-- FORM -->
+  <form method="POST" action="https://formspree.io/f/meerryrr">
+
+    <!-- Hidden fields for Formspree -->
+    <input type="hidden" name="_subject" value="RSVP Submission">
+    <input type="hidden" name="_next" value="https://nishithavamshi.github.io/rsvp-site/thanks.html">
+
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Will you attend?</label>
+    <select name="attending" required>
+      <option value="" disabled selected>--Select--</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label>Meal Preference:</label>
+    <select name="meal" required>
+      <option value="" disabled selected>--Select--</option>
+      <option>Veg</option>
+      <option>Non-Veg</option>
+    </select>
+
+    <label>Bringing a Guest?</label>
+    <select name="guest" required>
+      <option value="" disabled selected>--Select--</option>
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+
+    <label>Any message or note?</label>
+    <textarea name="note" rows="3" placeholder="Write something..."></textarea>
+
+    <button type="submit">Submit RSVP</button>
+
+  </form>
+
+</body>
+</html>

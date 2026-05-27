@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation</title>
+
+  <style>
+    /* Reset and base styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background-color: #000; /* Dark background for letterboxing */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Floating Button Container */
+    .button-container {
+      position: fixed; /* Keeps button accessible even if scrolling */
+      top: 20px;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: #d44e4e;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #b33d3d;
+      transform: scale(1.05);
+    }
+
+    /* Responsive Image Container */
+    .img-container {
+      width: 100%;
+      max-width: 600px; /* Limits width on desktop for better viewing */
+      line-height: 0; /* Removes tiny gap at bottom of image */
+    }
+
+    .invitation-img {
+      width: 100%;
+      height: auto; /* Ensures the whole image scales proportionally */
+      display: block;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+      .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="button-container">
+      <a href="form.html" class="btn">Open Invitation 💌</a>
+    </div>
+
+    <div class="img-container">
+      <img src="Sangeeth.jpg" class="invitation-img" alt="Cocktail Night Invitation">
+    </div>
+  </div>
+
+</body>
+</html>
